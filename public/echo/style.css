@@ -1,0 +1,59 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	
+	text-align: center;
+}
+
+.wrapper {
+	display: inline-block;
+	height: 200px;
+	border-top: 4px solid #1f3462;
+	overflow: hidden;
+	background: white;
+	
+	margin: 50px 0;
+	text-align: left;
+}
+
+.separator {
+	width: 1px;
+	height: 160px;
+	margin: 20px 0;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#e8e8e8), color-stop(100%,#ffffff));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#e8e8e8 50%,#ffffff 100%);
+	float: left;
+}
+
+.text {
+	width: 320px;
+	margin: 40px;
+	float: left;
+}
+.text p {
+	font-family: Lato, Arial;
+	font-size: 16px;
+	color: #a8a8a8;
+	margin: 0;
+	padding: 0;
+	letter-spacing: -0.25pt;
+	font-weight: 300;
+}
+
+.text .name {
+	font-size: 20px;
+	color: #1f3462;
+}
+
+.text .post {
+	margin-bottom: 20px;
+}
+
+.company {
+	width: 170px;
+	margin: 40px;
+	float: left;
+}
+
+.company img {
+}
