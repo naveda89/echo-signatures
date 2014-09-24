@@ -1,0 +1,46 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic,700italic,900italic);
+
+header {
+  &#signature {
+    padding-top: 30px;
+    background-color: #d9563c;
+    min-height: 400px;
+    width: 100%;
+    .logo {
+      color: #fff;
+      font-family: "Pacifico",cursive;
+      font-size: 30px;
+      line-height: 30px;
+      text-shadow: 0px 1px rgba(0,0,0,0.2);
+      text-decoration: none;
+    }
+
+    .social-icons {
+      & > a {
+        text-align: center;
+        background-color: #b0402a;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        color: #fff;
+        font-size: 24px;
+        display: inline-block;
+        padding: 5px 7px;
+        text-shadow: 0px 1px rgba(0,0,0,0.2);
+        i {
+          vertical-align: middle;
+          &.fa-facebook {
+            padding: 4px 5px;
+          }
+          &.fa-twitter {
+          }
+        }
+        &:hover {
+          text-decoration: none;
+          color: #d9563c;
+        }
+      }
+    }
+  }
+}
