@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
@@ -16,10 +16,36 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
+gem 'foreman'
+
+gem 'puma'
+
+# Application monitoring
+gem 'newrelic_rpm'
+
+gem 'mini_magick'
+gem 'sidekiq', '3.2.5'
+
+# if you require 'sinatra' you get the DSL extended to Object
+gem 'sinatra', '>= 1.3.0', :require => nil
+
+gem 'haml-rails'
+
+# Protect against bruteforcing
+gem 'rack-attack'
+
+gem 'bootstrap-sass', '~> 3.0'
+gem 'font-awesome-rails', '~> 4.2'
+
+gem 'nprogress-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -27,8 +53,21 @@ group :doc do
 end
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', require: false
+  gem 'sextant'
+  gem 'quiet_assets'
+  gem 'annotate', '>=2.6.0'
+  gem 'figaro'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'letter_opener'
+  gem 'rails_best_practices'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'heroku-deflater'
 end
 
 # Use ActiveModel has_secure_password
