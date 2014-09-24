@@ -1,0 +1,19 @@
+.air {
+  position: absolute;
+  &.pull-top-right {
+    right: 0;
+    top: 0;
+  }
+  &.pull-top-left {
+    left: 0;
+    top: 0;
+  }
+  &.pull-bottom-right {
+    right: 0;
+    bottom: 0;
+  }
+  &.pull-bottom-left {
+    left: 0;
+    bottom: 0;
+  }
+}

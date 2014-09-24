@@ -12,4 +12,6 @@
 #= require bootstrap
 #= require nprogress
 #= require nprogress-turbolinks
-#= require_tree .
+#= require websocket_rails/main
+
+#= require signatures

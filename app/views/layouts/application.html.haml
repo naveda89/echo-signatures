@@ -2,6 +2,7 @@
 %html
   %head
     %title Echo
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -10,150 +11,42 @@
     %header#signature
       .container
         .row
-          .col-md-12.header-inner
-            %a.logo.pull-left{:href => "#"} Grupo Urbegi
+          .col-xs-12.header-inner
+            = link_to 'Grupo Urbegi', root_path, class: 'logo pull-left shake animated'
             .social-icons.text-right.pull-right
               %a{:href => 'https://www.facebook.com/pages/Grupo-Urbegi/684397238292725'}
                 %i.fa.fa-facebook
 
           .clearfix
-          .col-md-12
+          .col-xs-12
             .row
               = render partial: 'main/signature/signature'
+              = render partial: 'main/signature/options'
 
-    %section#inside.sec-wrap
+    %section#generator-loading.section-wrapper
       .container
         .row
-          .col-md-12
-            %h2.sec-title
-              %span Whats Inside?
+          .col-xs-12
+            %h2.section-title.text-align-center
+              %span
+                %i.fa.fa-spinner.fa-spin
+                Generando firma ...
+            .fashion-icon.text-align-center
+              %h3.fashion-title
+                %i.fa.fa-paint-brush.fa-5x
 
-        .row
-          .col-md-6
-            %ul.media-list
-              %li.media
-                .media-object.media-object-alt 1
-                .media-body
-                  %h4.media-heading Insert Chapter Title One
-                  %p.text-lead Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-
-              %li.media
-                .media-object.media-object-alt 2
-                .media-body
-                  %h4.media-heading Insert Chapter Title Two
-                  %p.text-lead Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-
-              %li.media
-                .media-object.media-object-alt 3
-                .media-body
-                  %h4.media-heading Insert Chapter Title Three
-                  %p.text-lead Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-
-          / /span6
-          .col-md-6
-            %ul.media-list
-              %li.media
-                .media-object.media-object-alt 4
-                .media-body
-                  %h4.media-heading Insert Chapter Title Four
-                  %p.text-lead Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-
-              %li.media
-                .media-object.media-object-alt 5
-                .media-body
-                  %h4.media-heading Insert Chapter Title Five
-                  %p.text-lead Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-
-              %li.media
-                .media-object.media-object-alt 6
-                .media-body
-                  %h4.media-heading Insert Chapter Title Six
-                  %p.text-lead Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-
-    %section#testimonial.sec-wrap
+    %section#download.section-wrapper
       .container
         .row
-          .col-md-8.col-md-offset-2
-            #cbp-qtrotator.cbp-qtrotator
-              .cbp-qtcontent
-                %blockquote
-                  .testi-thumb
-                    %img{:alt => "user-photo", :height => "100", :src => "assets/img/alagoon.jpg", :width => "100"}/
-                  %p.testi-text
-                    "I have found this book to deliver detailed insights into a great topic. This book is full of variety and great instructional methods the knowledge and expertse displayed in this book has allowed me to grow my business."
-                  %h4.testi-user User Name
-                  %small Founder &amp; CEO, Company Name
-              / /cbp-qtcontent
-              .cbp-qtcontent
-                %blockquote
-                  .testi-thumb
-                    %img{:alt => "user-photo", :height => "100", :src => "assets/img/VinThomas.jpg", :width => "100"}/
-                  %p.testi-text
-                    "I have found this book to deliver detailed insights into a great topic. This book is full of variety and great instructional methods the knowledge and expertse displayed in this book has allowed me to grow my business."
-                  %h4.testi-user User Name
-                  %small Marketing, Company Name
-
-    %section#author.sec-wrap
-      .container
-        .row
-          .col-md-12
-            %h2.sec-title
-              %span About Authors
-          / span12
-          .col-md-6
-            .media
-              %a.pull-left{:href => "#"}
-                %img.media-object{:alt => "author photo", :height => "135", :src => "assets/img/author-photo.png", :width => "135"}/
-              .media-body
-                %p.text-lead-big Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                %p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                .social-icons.text-left
-                  %a{:href => "#"}
-                    %i.icon-facebook
-                  %a{:href => "#"}
-                    %i.icon-twitter
-
-          / span6
-          .col-md-6
-            .media
-              %a.pull-left{:href => "#"}
-                %img.media-object{:alt => "author photo", :height => "135", :src => "assets/img/author-photo.png", :width => "135"}/
-              .media-body
-                %p.text-lead-big Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                %p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                .social-icons.text-left
-                  %a{:href => "#"}
-                    %i.icon-facebook
-                  %a{:href => "#"}
-                    %i.icon-twitter
-
-    %section#marketing-footer.sec-wrap
-      .container
-        .row
-          .col-md-8.col-md-offset-2
-            %form.buy-form
-              %fieldset
-                .marketing-media.text-center
-                  %img{:alt => "book cover", :height => "177", :src => "assets/img/how-to-sell-online-book-cover-small.png", :width => "128"}/
-                .row-fluid
-                  .pricing.text-center
-                    .col-md-6.pricing-box
-                      %input#price1.prettyCheckable{:name => "price", :type => "radio", :value => "39"}/
-                      %h3 $39
-                      %p Printed Book + Digital eBook Bundle
-                    / /span6
-                    .col-md-6.pricing-box
-                      %input#price2.prettyCheckable{:name => "price", :type => "radio", :value => "29"}/
-                      %h3 $29
-                      %p Digital eBook Bundle(PDF, EPUB and MOBI)
-
-              .well
-                %button.btn.btn-info.btn-large.btn-block
-                  %i.icon-shopping-cart
-                  Buy Now
+          .col-xs-12
+            .flipInX.animated
+              %h2.section-title.text-align-center
+                %span Descargar firma
+                .clearfix
+                %i.fa.fa-cloud-download.fa-5x
 
     %footer
       .container
         .row
-          .col-md-12
+          .col-xs-12
             %p.text-center &copy; Urbegi Product Research #{Time.now.year}. Todos los derechos reservados.

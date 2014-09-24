@@ -28,6 +28,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    animate-rails (1.0.7)
+      rails
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -56,12 +58,19 @@ GEM
     coffee-script-source (1.8.0)
     colored (1.2)
     connection_pool (2.0.0)
+    daemons (1.1.9)
     debug_inspector (0.0.2)
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
+    em-synchrony (1.0.3)
+      eventmachine (>= 1.0.0.beta.1)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (2.2.1)
+    faye-websocket (0.7.4)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.3.1)
     figaro (1.0.0)
       thor (~> 0.14)
     font-awesome-rails (4.2.0.0)
@@ -76,10 +85,17 @@ GEM
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
+    has_scope (0.6.0.rc)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     heroku-deflater (0.5.3)
       rack (>= 1.4.5)
     hike (1.2.3)
+    hiredis (0.5.2)
     i18n (0.6.11)
+    inherited_resources (1.4.1)
+      has_scope (~> 0.6.0.rc)
+      responders (~> 1.0.0.rc)
     jbuilder (2.1.3)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -91,7 +107,13 @@ GEM
       turbolinks
     jquery-ui-rails (5.0.0)
       railties (>= 3.2.16)
+    jquery-validation-rails (1.12.0)
+      railties (>= 3.2, < 5.0)
+      thor (~> 0.14)
     json (1.8.1)
+    kaminari (0.16.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.2)
       addressable (~> 2.3)
     letter_opener (1.2.0)
@@ -105,6 +127,7 @@ GEM
     multi_json (1.10.1)
     newrelic_rpm (3.9.4.245)
     nprogress-rails (0.1.6.2)
+    pg (0.17.1)
     puma (2.9.1)
       rack (>= 1.1, < 2.0)
     quiet_assets (1.0.3)
@@ -149,10 +172,15 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    redcarpet (3.1.2)
     redis (3.1.0)
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
+    redis-objects (1.0.0)
+      redis (>= 3.0.2)
     require_all (1.3.2)
+    responders (1.0.0)
+      railties (>= 3.2, < 5)
     ruby-progressbar (1.6.0)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -188,6 +216,10 @@ GEM
       sprockets (~> 2.8)
     sqlite3 (1.3.9)
     subexec (0.2.3)
+    thin (1.6.2)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -199,11 +231,22 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    websocket-driver (0.3.4)
+    websocket-rails (0.7.0)
+      em-synchrony
+      faye-websocket
+      hiredis
+      rack
+      rails
+      redis
+      redis-objects
+      thin
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  animate-rails
   annotate (>= 2.6.0)
   better_errors
   binding_of_caller
@@ -213,21 +256,27 @@ DEPENDENCIES
   font-awesome-rails (~> 4.2)
   foreman
   haml-rails
+  has_scope
   heroku-deflater
+  inherited_resources
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails
+  jquery-validation-rails
+  kaminari
   letter_opener
   mini_magick
   newrelic_rpm
   nprogress-rails
+  pg
   puma
   quiet_assets
   rack-attack
   rails (= 4.1.6)
   rails_12factor
   rails_best_practices
+  redcarpet
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   sextant
@@ -237,3 +286,4 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  websocket-rails

@@ -1,22 +1,46 @@
-.col-md-10.col-md-offset-1
-  .signature-generator.margin-20
-    .text-align-center.margin-bottom-20
-      %h1.generator-title.margin-0 Genera tu propia firma
-      %p Introduce tus datos y podrás generar tu propia firma para identificarte de forma oficial ante tus contactos.
-
-    .container-fluid
+.col-xs-12
+  .clearfix
+  .generator-supertitle.text-align-center.margin-top-15.margin-bottom-20.fadeIn.animated
+    %h1.generator-title.margin-0 Genera tu propia firma
+    %p Introduce tus datos y podrás generar tu propia firma para identificarte de forma oficial ante tus contactos.
+  .signature-generator.margin-20.bounceInDown.animated
+    = form_for :signature,url: signatures_url,
+                html: { autocomplete: 'off' },
+                remote: true do |f|
       .row
-        .col-md-10.col-md-offset-1
+        .col-xs-12
           #signature-preview.margin-bottom-10
-            .container-fluid
-              .row
-                .col-md-6.input-data
-                  %p.name Nombre Apellido Apellidos
-                  %p.role Cargo
-                  %p.email email@urbegi.com
-                  %p.tel Tel. 94 680 19 34
-                  %p.web http://urbegi.com
-                .col-md-3.corporate-logo.text-align-center
-                  = image_tag 'logos/tenzing.png'
-                .col-md-3.corporate-logo.text-align-center
-                  = image_tag 'logos/urbegi.png'
+            .text
+              %p.name
+                = f.text_field :name, class: 'name',
+                                placeholder: 'Nombre Apellido Apellidos',
+                                required: true
+              %p
+                = f.text_field :role,
+                                placeholder: 'Cargo',
+                                required: true
+              %p.email
+                = f.email_field :email,
+                                placeholder: 'email@urbegi.com',
+                                required: true
+              %p
+                = f.telephone_field :telephone, placeholder: 'Tel. 94 680 19 34'
+              %p
+                = f.text_field :web, placeholder: 'http://urbegi.com'
+            .separator.hidden-xs.hidden-sm
+            .corporate-logo.text-align-center.hidden-xs.hidden-sm
+              = image_tag 'logos/tenzing.png'
+            .separator.hidden-xs.hidden-sm
+            .corporate-logo.text-align-center.hidden-xs.hidden-sm
+              = image_tag 'logos/urbegi.png'
+
+        .col-xs-12.col-sm-10.actions.text-align-center
+          %button.btn.btn-info.btn-lg.btn-block
+            %i.fa.fa-paperclip
+            Generar Firma
+        .clearfix.visible-xs.margin-10
+        .col-xs-12.col-sm-2.text-align-center
+          = link_to '#', id: 'toggleOptions', class: 'btn btn-primary btn-lg btn-block' do
+            %i.fa.fa-cogs
+            %span.hidden-sm
+              Opciones

@@ -23,5 +23,13 @@ module Echo
     # Protect against bruteforcing
     config.middleware.use Rack::Attack
 
+    # WebsocketRails
+    config.middleware.delete Rack::Lock
+
+    # Fix for bootstrap error fields
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+      html_tag
+    end
+
   end
 end
