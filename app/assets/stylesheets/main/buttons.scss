@@ -1,0 +1,27 @@
+.selected {
+  position: relative;
+  border: 1px solid #0091d9 !important;
+  &:before {
+    display: block;
+    position: absolute;
+    content: "\f00c";
+    color: #ffffff;
+    right: 4px;
+    top: 3px;
+    font-family: FontAwesome;
+    font-size: 12px;
+    z-index: 2;
+  }
+  &:after {
+    width: 0;
+    height: 0;
+    border-top: 35px solid #0091d9;
+    border-left: 35px solid rgba(0,0,0,0);
+    position: absolute;
+    display: block;
+    right: 0;
+    content: "";
+    top: 0;
+    z-index: 1;
+  }
+}
