@@ -27,11 +27,14 @@
                 = f.telephone_field :telephone, placeholder: 'Tel. 94 680 19 34'
               %p
                 = f.text_field :web, placeholder: 'http://urbegi.com'
-            .separator.hidden-xs.hidden-sm
-            .corporate-logo.text-align-center.hidden-xs.hidden-sm
+            .hidden
+              -# Urbegi as default enterprise
+              = f.hidden_field :enterprise, value: 'urbegi'
+            .separator.hidden-xs.hidden-sm.tenzing.hidden
+            .corporate-logo.text-align-center.hidden-xs.hidden-sm.tenzing.hidden
               = image_tag 'logos/tenzing.png'
             .separator.hidden-xs.hidden-sm
-            .corporate-logo.text-align-center.hidden-xs.hidden-sm
+            .corporate-logo.main-logo.text-align-center.hidden-xs.hidden-sm
               = image_tag 'logos/urbegi.png'
 
         .col-xs-12.col-sm-10.actions.text-align-center
@@ -40,7 +43,7 @@
             Generar Firma
         .clearfix.visible-xs.margin-10
         .col-xs-12.col-sm-2.text-align-center
-          = link_to '#', id: 'toggleOptions', class: 'btn btn-primary btn-lg btn-block' do
+          = link_to '#', id: 'toggleOptions', class: 'btn btn-primary btn-lg btn-block active' do
             %i.fa.fa-cogs
             %span.hidden-sm
               Opciones
