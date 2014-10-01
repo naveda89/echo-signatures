@@ -123,7 +123,7 @@ GEM
     mime-types (2.3)
     mini_magick (3.8.1)
       subexec (~> 0.2.1)
-    minitest (5.4.1)
+    minitest (5.4.2)
     multi_json (1.10.1)
     newrelic_rpm (3.9.4.245)
     nprogress-rails (0.1.6.2)

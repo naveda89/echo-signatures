@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
-  require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
+  namespace :admin do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
 end
