@@ -96,6 +96,17 @@
 #signature-options {
   background: #b0402a;
   @include border-radius(6px);
+  .heading {
+    font-size: 22px;
+    color: #fff;
+    font-family: $regular_font;
+    text-shadow: 0px 1px rgba(0,0,0,0.2);
+  }
+  .enterprise-selector {
+    img {
+      -webkit-user-drag: none;
+    }
+  }
 }
 
 #generator-loading {

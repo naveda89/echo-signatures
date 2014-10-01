@@ -7,11 +7,11 @@ class Signature
 
   define_model_callbacks :save
 
-  attr_accessor :name, :role, :email, :telephone, :web
+  attr_accessor :name, :role, :email, :telephone, :web, :enterprise
 
   validates_presence_of :name, :role, :email
 
-  after_save :generate
+  after_save :async_generate
 
   def save
     if valid?
@@ -27,7 +27,7 @@ class Signature
     false
   end
 
-  def generate
+  def async_generate
     SignatureWorker.perform_async(self.as_json)
   end
 

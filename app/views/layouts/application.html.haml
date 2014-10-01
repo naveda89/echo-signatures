@@ -23,20 +23,21 @@
               = render partial: 'main/signature/signature'
               = render partial: 'main/signature/options'
 
-    %section#generator-loading.section-wrapper
+    %section#generator-loading.section-wrapper.hidden
       .container
         .row
           .col-xs-12
-            %h2.section-title.text-align-center
-              %span
-                %i.fa.fa-spinner.fa-spin
-                Generando firma ...
-            .fashion-icon.text-align-center
-              %h3.fashion-title
-                %i.fa.fa-paint-brush.fa-5x
+            .bounceInLeft.animated
+              %h2.section-title.text-align-center
+                %span
+                  %i.fa.fa-spinner.fa-spin
+                  Generando firma ...
+              .fashion-icon.text-align-center
+                %h3.fashion-title
+                  %i.fa.fa-paint-brush.fa-5x
 
-    %section#download.section-wrapper
-      .container
+    %section#download.section-wrapper.hidden
+      .container.fill
         .row
           .col-xs-12
             .flipInX.animated
