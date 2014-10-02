@@ -29,7 +29,7 @@ gem 'puma'
 # Application monitoring
 gem 'newrelic_rpm'
 
-gem 'mini_magick'
+gem 'rmagick'
 gem 'sidekiq', '3.2.5', require: 'sidekiq/web'
 
 # if you require 'sinatra' you get the DSL extended to Object
@@ -82,6 +82,28 @@ group :production do
   gem 'rails_12factor'
   gem 'heroku-deflater'
   gem 'pg'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara', '~> 2.2.1'
+  gem 'pry'
+  gem 'awesome_print'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+
+  gem 'minitest'
+
+  # Generate Fake data
+  gem 'ffaker'
+end
+
+group :test do
+  gem 'simplecov', require: false
+  gem 'shoulda-matchers', '~> 2.1.0'
+  gem 'email_spec'
+  gem 'webmock'
+  gem 'test_after_commit'
 end
 
 # Use ActiveModel has_secure_password
