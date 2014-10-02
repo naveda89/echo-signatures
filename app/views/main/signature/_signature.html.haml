@@ -38,7 +38,8 @@
               = image_tag 'logos/urbegi.png'
 
         .col-xs-12.col-sm-10.actions.text-align-center
-          %button.btn.btn-info.btn-lg.btn-block
+          = f.button class: 'btn btn-info btn-lg btn-block',
+                     data: { disable_with: 'Generando...' } do
             %i.fa.fa-paperclip
             Generar Firma
         .clearfix.visible-xs.margin-10

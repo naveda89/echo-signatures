@@ -5,12 +5,15 @@ class Signature
   include ActiveModel::Serializers
   extend ActiveModel::Callbacks
 
+  include SignatureGenerator
+
   define_model_callbacks :save
 
   attr_accessor :name, :role, :email, :telephone, :web, :enterprise
 
   validates_presence_of :name, :role, :email
 
+  before_save :default_values
   after_save :async_generate
 
   def save
@@ -23,8 +26,18 @@ class Signature
     end
   end
 
+  def save!
+    save
+  end
+
   def persisted?
     false
+  end
+
+  def default_values
+    self.web = self.web.presence || 'http://www.urbegi.com'
+    self.telephone = self.telephone.presence || 'Tel. 94 680 19 34'
+    self.enterprise = self.enterprise.presence || 'urbegi'
   end
 
   def async_generate
