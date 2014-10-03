@@ -1,4 +1,5 @@
 require 'RMagick'
+require 'aws-sdk'
 
 module SignatureGenerator
   extend ActiveSupport::Concern
@@ -125,9 +126,22 @@ module SignatureGenerator
     @font_path ||= "#{Rails.root}/app/assets/fonts/HelveticaLt.ttf"
   end
 
-  # Saves the image in a temporal path
+  # Saves the image in a temporal path and upload the signature to AWS S3
   def save_signature
-    image.write('public/signatures/test.png')
+    image.write(file_path = "#{Rails.root}/tmp/#{SecureRandom.hex(10)}.png")
+    return upload_signature(file_path)
+  end
+
+  def upload_signature(file_path)
+    s3 = AWS::S3.new
+    bucket = s3.buckets[AWS_S3_BUCKET]
+
+    # Upload file to AWS_S3_BUCKET
+    key = File.basename("#{name.parameterize}_#{SecureRandom.hex(10)}")
+    bucket.objects[key].write(file: file_path,acl: :public_read)
+
+    # Uploaded file remote URL
+    "https://s3.amazonaws.com/#{AWS_S3_BUCKET}/#{key}"
   end
 
 end
