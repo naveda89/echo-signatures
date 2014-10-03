@@ -1,0 +1,1 @@
+AWS_S3_BUCKET = ENV['AWS_S3_BUCKET'] || 'echo-signatures-prod'
