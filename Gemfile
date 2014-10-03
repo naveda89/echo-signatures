@@ -54,7 +54,7 @@ gem 'inherited_resources'
 gem 'has_scope'
 gem 'kaminari'
 
-gem 'websocket-rails'
+gem 'tubesock'
 
 gem 'jquery-validation-rails'
 
