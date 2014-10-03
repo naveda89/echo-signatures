@@ -12,6 +12,6 @@
 #= require bootstrap
 #= require nprogress
 #= require nprogress-turbolinks
-#= require websocket_rails/main
 
+#= require generator
 #= require signatures
