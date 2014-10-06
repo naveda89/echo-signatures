@@ -2,7 +2,7 @@
 %html
   %head
     %title Echo
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => 'width=device-width, initial-scale=1', :name => 'viewport'}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -18,33 +18,27 @@
                 %i.fa.fa-facebook
 
           .clearfix
-          .col-xs-12
+          .col-xs-12.margin-bottom-20
             .row
               = render partial: 'main/signature/signature'
               = render partial: 'main/signature/options'
 
-    %section#generator-loading.section-wrapper.hidden
-      .container
-        .row
-          .col-xs-12
-            .bounceInLeft.animated
-              %h2.section-title.text-align-center
-                %span
-                  %i.fa.fa-spinner.fa-spin
-                  Generando firma ...
-              .fashion-icon.text-align-center
-                %h3.fashion-title
-                  %i.fa.fa-paint-brush.fa-5x
-
-    %section#download.section-wrapper.hidden
+    %section#generated.section-wrapper.hidden
       .container.fill
-        .row
+        .row.margin-top-30
           .col-xs-12
-            .flipInX.animated
-              %h2.section-title.text-align-center
-                %span Descargar firma
-                .clearfix
-                %i.fa.fa-cloud-download.fa-5x
+            -#.flipInX.animated
+            %h2.h1.section-title.text-center
+              %span
+                %i.fa.fa-cloud-download
+                Descargar firma
+              .clearfix
+              #generated-signature
+                .image.margin-20
+                .link
+                  %span.url
+                  %span.label.label-default
+                    %i.fa.fa-link
 
     %footer
       .container

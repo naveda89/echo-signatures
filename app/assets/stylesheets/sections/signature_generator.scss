@@ -61,6 +61,7 @@
           margin-top: 15px;
         }
         input {
+          width: 100%;
           border: none;
           outline: none;
         }
@@ -109,20 +110,30 @@
   }
 }
 
-#generator-loading {
-  .fashion-icon {
-    height: 400px;
-    width: 100%;
-    display: table;
-    vertical-align: middle;
-    color: #D1D1D1;
-    text-shadow: #fff 0px 1px 0, #A0A0A0 0 -1px 0;
-    .fashion-title {
-      display: table-cell;
-      vertical-align: middle;
-      i {
-        font-size: 6em;
+#generated {
+  background-color: #2F2F2F;
+
+  .section-title {
+    font-family: $regular_font;
+    color: #FFFFFF;
+
+  }
+
+  #generated-signature {
+
+    .image {
+      display: inline-block;
+      padding: 20px;
+      background-color: #4F4F4F;
+      @include border-radius(10px);
+    }
+    .link {
+      font-size: 12px;
+      .url {
+        text-decoration: underline;
       }
+
     }
   }
+
 }

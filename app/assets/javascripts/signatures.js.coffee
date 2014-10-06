@@ -40,11 +40,6 @@ $(document).ready ->
       $("#signature-preview .main-logo").html(main_logo)
 
 
-  # Signature generator form handler
-  $(document).on 'ajax:beforeSend', ".signature-generator form", ->
-    $("#generator-loading").removeClass("hidden")
-
-
 
 
 

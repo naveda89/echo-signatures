@@ -13,5 +13,10 @@
 #= require nprogress
 #= require nprogress-turbolinks
 
+#= require messenger
+#= require messenger-theme-flat
+
+#= require_tree ./plugins
+
 #= require generator
 #= require signatures

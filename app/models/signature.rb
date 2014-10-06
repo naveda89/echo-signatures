@@ -10,6 +10,7 @@ class Signature
   define_model_callbacks :save
 
   attr_accessor :name, :role, :email, :telephone, :web, :enterprise
+  attr_accessor :pssid
 
   validates_presence_of :name, :role, :email
 

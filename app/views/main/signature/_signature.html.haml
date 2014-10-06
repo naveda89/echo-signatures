@@ -5,7 +5,7 @@
     %p Introduce tus datos y podrás generar tu propia firma para identificarte de forma oficial ante tus contactos.
   .signature-generator.margin-20.bounceInDown.animated
     = form_for :signature,url: signatures_url,
-                html: { autocomplete: 'off' },
+                html: { autocomplete: 'off', data: { ws: generator_signatures_path } },
                 remote: true do |f|
       .row
         .col-xs-12

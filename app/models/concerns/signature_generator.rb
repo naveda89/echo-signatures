@@ -11,6 +11,7 @@ module SignatureGenerator
     def generate(data={})
       data.except!('errors', 'validation_context')
       data.except!('changed_attributes', 'previously_changed')
+
       signature = Signature.new(data)
       signature.generate
     end
@@ -19,8 +20,10 @@ module SignatureGenerator
   #
   # Generates signature image and saves it
   def generate
+    # Trigger all signature image generators
     process
-    save_signature
+    # Notify with a URL to the waiting client
+    notify_client save_signature
   end
 
   #
@@ -138,10 +141,17 @@ module SignatureGenerator
 
     # Upload file to AWS_S3_BUCKET
     key = File.basename("#{name.parameterize}_#{SecureRandom.hex(10)}")
-    bucket.objects[key].write(file: file_path,acl: :public_read)
+    bucket.objects[key].write(file: file_path, acl: :public_read)
 
     # Uploaded file remote URL
     "https://s3.amazonaws.com/#{AWS_S3_BUCKET}/#{key}"
+  end
+
+  # Notify through redis pubsub
+  def notify_client(url)
+    Sidekiq.redis { |redis|
+      redis.publish(pssid, { url: url }.to_json )
+    }
   end
 
 end
