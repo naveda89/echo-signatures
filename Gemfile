@@ -46,6 +46,8 @@ gem 'font-awesome-rails', '~> 4.2'
 gem 'messengerjs-rails', '~> 1.4.1'
 gem 'nprogress-rails'
 gem 'animate-rails'
+gem 'jquery-scrollto-rails'
+gem 'jquery-easing-rails'
 
 gem 'redcarpet'
 

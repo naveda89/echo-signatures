@@ -26,19 +26,20 @@
     %section#generated.section-wrapper.hidden
       .container.fill
         .row.margin-top-30
-          .col-xs-12
+          .col-xs-12.text-center
             -#.flipInX.animated
-            %h2.h1.section-title.text-center
+            %h2.h1.section-title
               %span
                 %i.fa.fa-cloud-download
                 Descargar firma
-              .clearfix
-              #generated-signature
-                .image.margin-20
-                .link
-                  %span.url
-                  %span.label.label-default
-                    %i.fa.fa-link
+            .clearfix
+            #generated-signature
+              .image.margin-20
+                = image_tag nil, class: 'img-responsive'
+              = link_to '#generated', target: :blank, class: 'link' do
+                %span.url
+                %span.label.label-default
+                  %i.fa.fa-link
 
     %footer
       .container

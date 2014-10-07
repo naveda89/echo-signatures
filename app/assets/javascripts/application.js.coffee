@@ -16,6 +16,9 @@
 #= require messenger
 #= require messenger-theme-flat
 
+#= require jquery.easing
+#= require jquery.scrollTo
+
 #= require_tree ./plugins
 
 #= require generator

@@ -128,8 +128,10 @@
       @include border-radius(10px);
     }
     .link {
+      display: block;
       font-size: 12px;
       .url {
+        color: #FFF;
         text-decoration: underline;
       }
 
