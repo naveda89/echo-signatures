@@ -1,3 +1,6 @@
+root = exports ? this
+root.messenger = null
+
 class @Generator
 
   this.work = ->
@@ -18,11 +21,10 @@ class @Generator
   this.renderSignature = (url) ->
     console.log url
 
-    Messenger().post
+    root.messenger.update
       message: 'La firma ha sido generada correctamente'
       type: 'success'
       showCloseButton: true
-      hideAfter: 5
 
     $("#generated").removeClass("hidden")
 
@@ -36,10 +38,11 @@ $(document).ready ->
   # Signature generator form handler
   $(document).on 'ajax:beforeSend', ".signature-generator form", (e, xhr, settings) ->
     $(".section-wrapper").addClass("hidden")
-    Messenger().post
+    root.messenger = Messenger().post
       message: 'La firma está siendo generada'
       type: 'info'
       hideAfter: 5
+      singleton: true
 
   $(document).on 'ajax:success', ".signature-generator form", (e, data, status, xhr) ->
     console.log 'Signature generated'
@@ -48,8 +51,7 @@ $(document).ready ->
   $(document).on 'ajax:error', ".signature-generator form", (e) ->
     console.error 'Signature generator failed'
 
-    Messenger().post
+    root.messenger.update
       message: 'Ha ocurrido algún error generando la firma'
       type: 'error'
       showCloseButton: true
-      hideAfter: 5
