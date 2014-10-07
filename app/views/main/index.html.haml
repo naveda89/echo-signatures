@@ -1,2 +1,32 @@
-%h1 Main#index
-%p Find me in app/views/main/index.html.haml
+%header#signature
+  .container
+    .row
+      .col-xs-12.header-inner
+        = link_to 'Grupo Urbegi', root_path, class: 'logo pull-left shake animated'
+        .social-icons.text-right.pull-right
+          %a{:href => 'https://www.facebook.com/pages/Grupo-Urbegi/684397238292725'}
+            %i.fa.fa-facebook
+
+      .clearfix
+      .col-xs-12.margin-bottom-20
+        .row
+          = render partial: 'main/signature/signature'
+          = render partial: 'main/signature/options'
+
+%section#generated.section-wrapper.hidden
+  .container.fill
+    .row.margin-top-30
+      .col-xs-12.text-center
+        -#.flipInX.animated
+        %h2.h1.section-title
+          %span
+            %i.fa.fa-cloud-download
+            Descargar firma
+        .clearfix
+        #generated-signature
+          .image.margin-20
+            = image_tag nil, class: 'img-responsive'
+          = link_to '#generated', target: :blank, class: 'link' do
+            %span.url
+            %span.label.label-default
+              %i.fa.fa-link
