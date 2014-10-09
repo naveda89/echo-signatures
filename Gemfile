@@ -60,7 +60,8 @@ gem 'tubesock'
 
 gem 'jquery-validation-rails'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.33.0'
+gem 'colorize', require: nil
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
