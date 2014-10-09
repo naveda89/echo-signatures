@@ -27,10 +27,6 @@ class Signature
     end
   end
 
-  def save!
-    save
-  end
-
   def persisted?
     false
   end
