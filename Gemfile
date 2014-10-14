@@ -109,6 +109,7 @@ group :test do
   gem 'email_spec'
   gem 'webmock'
   gem 'test_after_commit'
+  gem 'rspec-sidekiq'
 end
 
 # Use ActiveModel has_secure_password

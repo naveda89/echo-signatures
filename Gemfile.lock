@@ -207,6 +207,10 @@ GEM
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rmagick (2.13.2)
+    rspec (3.1.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
     rspec-core (3.1.5)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -222,6 +226,9 @@ GEM
       rspec-expectations (~> 3.1.0)
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
+    rspec-sidekiq (2.0.0)
+      rspec (~> 3.0, >= 3.0.0)
+      sidekiq (>= 2.4.0)
     rspec-support (3.1.1)
     ruby-progressbar (1.6.0)
     safe_yaml (1.0.4)
@@ -339,6 +346,7 @@ DEPENDENCIES
   redcarpet
   rmagick
   rspec-rails
+  rspec-sidekiq
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   sextant
